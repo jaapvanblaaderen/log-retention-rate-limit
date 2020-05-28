@@ -1,0 +1,37 @@
+{
+  "name": "log-retention-rate-limit",
+  "version": "0.1.0",
+  "bin": {
+    "log-retention-rate-limit": "bin/log-retention-rate-limit.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "deploy": "./deploy.sh",
+    "deploy-parallel": "./deploy-parallel.sh",
+    "destroy": "./destroy.sh"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.41.0",
+    "@aws-cdk/aws-apigateway": "1.41.0",
+    "@aws-cdk/aws-dynamodb": "1.41.0",
+    "@aws-cdk/aws-events": "1.41.0",
+    "@aws-cdk/aws-events-targets": "1.41.0",
+    "@aws-cdk/aws-iam": "1.41.0",
+    "@aws-cdk/aws-lambda": "1.41.0",
+    "@aws-cdk/aws-servicediscovery": "1.41.0",
+    "@aws-cdk/core": "1.41.0",
+    "aws-cdk": "1.41.0",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.31",
+    "jest": "^25.5.4",
+    "ts-jest": "^25.5.1",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.627.0"
+  }
+}

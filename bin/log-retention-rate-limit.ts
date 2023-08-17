@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import * as cdk from '@aws-cdk/core';
-import { LogRetentionRateLimitStack } from '../lib/log-retention-rate-limit-stack';
+import { App } from "aws-cdk-lib";
+import { LogRetentionRateLimitStack } from "../lib/log-retention-rate-limit-stack";
 
-const app = new cdk.App();
+const app = new App();
 
-for(let i=0; i<10; i++) {
+for (let i = 0; i < 10; i++) {
   new LogRetentionRateLimitStack(app, `LogRetentionRateLimitStack${i}`);
 }

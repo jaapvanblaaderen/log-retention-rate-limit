@@ -21,8 +21,7 @@ export class LogRetentionRateLimitStack extends Stack {
         code: Code.fromAsset("./lib/hello"),
         logRetention: RetentionDays.ONE_WEEK,
         logRetentionRetryOptions: {
-          maxRetries: 8,
-          base: Duration.millis(200),
+          maxRetries: 20,
         },
       });
 

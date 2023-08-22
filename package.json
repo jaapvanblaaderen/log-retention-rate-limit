@@ -9,8 +9,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "deploy": "./deploy.sh",
-    "deploy-parallel": "./deploy-parallel.sh",
+    "deploy": "npm run build && ./deploy.sh",
+    "deploy-parallel": "npm run build && ./deploy-parallel.sh",
     "destroy": "./destroy.sh"
   },
   "devDependencies": {

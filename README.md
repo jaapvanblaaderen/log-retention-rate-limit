@@ -6,17 +6,16 @@ Project deploys 5 identical stacks, each containing 25 Lambda functions.
 
 ## Commands
 
-Note: The deploy shell scripts assumes a configuration using an AWS profile named `main-dev`.
+Note: The deploy shell scripts assume you specify an AWS profile to run with.
 
- * `npm install`              Install dependencies
- * `npm run build`            Compile typescript to js
- * `npm run deploy`           Deploy stacks sequentially
- * `npm run deploy-parallel`  Deploy stacks in parallel
- * `npm run destroy`          Destroy stacks
+ * `npm install`              					Install dependencies
+ * `npm run deploy -- <AWS_PROFILE>`    		Deploy stacks serial
+ * `npm run deploy-parallel -- <AWS_PROFILE>`  	Deploy stacks in parallel
+ * `npm run destroy -- <AWS_PROFILE>`          	Destroy stacks
 
 ## Issue details
 
-The issue seems hard to reproduce when deploying the stacks sequentially, but it is when doing it in parallel:
+The issue seems hard to reproduce when deploying the stacks in serial, but it is when doing it in parallel:
 
 ```
  128/101 | 9:04:29 AM | CREATE_IN_PROGRESS   | Custom::LogRetention        | hello_5/LogRetention (hello5LogRetention5D258C6A) Resource creation Initiated

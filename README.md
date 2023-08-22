@@ -18,26 +18,5 @@ Note: The deploy shell scripts assume you specify an AWS profile to run with.
 The issue seems hard to reproduce when deploying the stacks in serial, but it is when doing it in parallel:
 
 ```
- 128/101 | 9:04:29 AM | CREATE_IN_PROGRESS   | Custom::LogRetention        | hello_5/LogRetention (hello5LogRetention5D258C6A) Resource creation Initiated
- 129/101 | 9:04:29 AM | CREATE_FAILED        | Custom::LogRetention        | hello_5/LogRetention (hello5LogRetention5D258C6A) Failed to create resource. Rate exceeded
-	new LogRetention (/repos/logretention-rate-limit/node_modules/@aws-cdk/aws-lambda/lib/log-retention.ts:67:22)
-	\_ new Function (/repos/logretention-rate-limit/node_modules/@aws-cdk/aws-lambda/lib/function.ts:537:28)
-	\_ new LogRetentionRateLimitStack (/repos/logretention-rate-limit/lib/log-retention-rate-limit-stack.ts:17:18)
-	\_ Object.<anonymous> (/repos/logretention-rate-limit/bin/log-retention-rate-limit.ts:8:3)
-	\_ Module._compile (internal/modules/cjs/loader.js:1151:30)
-	\_ Module.m._compile (/repos/logretention-rate-limit/node_modules/ts-node/src/index.ts:858:23)
-	\_ Module._extensions..js (internal/modules/cjs/loader.js:1171:10)
-	\_ Object.require.extensions.<computed> [as .ts] (/repos/logretention-rate-limit/node_modules/ts-node/src/index.ts:861:12)
-	\_ Module.load (internal/modules/cjs/loader.js:1000:32)
-	\_ Function.Module._load (internal/modules/cjs/loader.js:899:14)
-	\_ Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-	\_ main (/repos/logretention-rate-limit/node_modules/ts-node/src/bin.ts:227:14)
-	\_ Object.<anonymous> (/repos/logretention-rate-limit/node_modules/ts-node/src/bin.ts:513:3)
-	\_ Module._compile (internal/modules/cjs/loader.js:1151:30)
-	\_ Object.Module._extensions..js (internal/modules/cjs/loader.js:1171:10)
-	\_ Module.load (internal/modules/cjs/loader.js:1000:32)
-	\_ Function.Module._load (internal/modules/cjs/loader.js:899:14)
-	\_ Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-	\_ /usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14
-
+LogRetentionRateLimitStack3 |  57/183 | 11:34:35 AM | CREATE_FAILED        | Custom::LogRetention        | hello_11/LogRetention (hello11LogRetention0EC20DD0) Received response status [FAILED] from custom resource. Message returned: Rate exceeded (RequestId: b84c54c4-3053-487a-82b9-48671904d05a)
 ```
